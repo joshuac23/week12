@@ -53,5 +53,16 @@ function createAddParagraph() {
 ClickMeButton.addEventListener("click", createAddParagraph, {once: true});
 
 function changeBGgreen(event){
-    event.target.classList.add("green-bg")
+    event.target.classList.toggle("green-bg")
+}
+
+const buttonContainer = document.querySelector(".buttonContainer");
+buttonContainer.addEventListener("mouseover", changeBGgreen);
+
+
+buttonContainer.addEventListener("click", changeParaCol);
+
+function changeParaCol(event){
+    // console.log(event.target.textContent)
+    event.target.style.backgroundColor = event.target.textContent;
 }
