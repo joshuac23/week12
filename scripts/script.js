@@ -1,7 +1,8 @@
 const ClickMeButton = document.querySelector(".clickme")
 
-function clickme () {
-    alert("You clicked the button!")
+function clickmefunc () {
+    alert("You clicked the button!");
+    // ClickMeButton.removeEventListener("click", clickmefunc)
 }
 
-ClickMeButton.addEventListener("click", clickme)
+ClickMeButton.addEventListener("click", clickmefunc, {once: true})
