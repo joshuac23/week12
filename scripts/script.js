@@ -5,4 +5,23 @@ function clickmefunc () {
     // ClickMeButton.removeEventListener("click", clickmefunc)
 }
 
-ClickMeButton.addEventListener("click", clickmefunc, {once: true})
+function changebackgroundcolour () {
+    document.body.classList.add("pink");
+}
+
+// ClickMeButton.addEventListener("click", clickmefunc);
+ClickMeButton.addEventListener("click", changebackgroundcolour);
+
+
+// change text in button after clicking
+function changeText () {
+    if (ClickMeButton.textContent === "Click me!"){
+    ClickMeButton.textContent = "Clicked!";
+    }
+
+    else {
+        ClickMeButton.textContent = "Click me!";
+    }
+}
+
+ClickMeButton.addEventListener("click", changeText);
