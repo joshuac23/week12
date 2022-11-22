@@ -14,7 +14,8 @@ ClickMeButton.addEventListener("click", changebackgroundcolour);
 
 
 // change text in button after clicking
-function changeText () {
+function changeText (event) {
+    console.log(event.target)
     if (ClickMeButton.textContent === "Click me!"){
     ClickMeButton.textContent = "Clicked!";
     }
@@ -25,3 +26,32 @@ function changeText () {
 }
 
 ClickMeButton.addEventListener("click", changeText);
+
+// add new button
+function createAddButton() {
+    const newButton = document.createElement("button");
+    // newButton.classList.add("green-bg")
+    newButton.addEventListener("mousemove", changeBGgreen)
+    newButton.textContent = "Purple";
+    document.body.appendChild(newButton);
+
+}
+
+ClickMeButton.addEventListener("click", createAddButton, {once:true});
+
+
+// add paragraph
+function createAddParagraph() {
+    const newPara = document.createElement("p");
+    // newPara.classList.add("green-bg");
+    newPara.addEventListener("mouseover", changeBGgreen)
+    newPara.textContent = "My paragraph";
+    document.body.appendChild(newPara);
+
+}
+
+ClickMeButton.addEventListener("click", createAddParagraph, {once: true});
+
+function changeBGgreen(event){
+    event.target.classList.add("green-bg")
+}
